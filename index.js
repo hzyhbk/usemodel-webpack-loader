@@ -1,3 +1,3 @@
-var loader = require('./src');
+var loader = require('./src/loader.js');
 
 module.exports = loader;

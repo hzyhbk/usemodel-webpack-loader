@@ -119,7 +119,7 @@ function getSelectorFn(modelName, properties) {
 function getNode(code) {
   return babelParse(code, {
     sourceType: 'module',
-    plugins: ['classProperties', 'typescript'],
+    plugins: ['classProperties', 'typescript', 'jsx'],
   });
 }
 
@@ -205,6 +205,7 @@ module.exports = function (source) {
     });
     return generate(ast, { retainLines: false }).code;
   } catch (e) {
+    console.log('[usemodel-loader: error]: ', e, source);
     return source;
   }
 };
